@@ -1,0 +1,51 @@
+<html>
+<head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="{{ asset('assets/standby.css')}}">
+    <!-- <link rel="stylesheet" href="{{ asset('assets/bootstrap.min.css')}}"> -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="shortcut icon" type="image/png" href="{{ asset('img/favicon.png') }}" />
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+</head>
+<body style="background-color: white;" >
+<nav class="navbar navbar-expand-lg navbar-inverse bg-inverse">
+    <a class="navbar-brand" href="#"><img src="{{ asset('img/logo.png') }}"> </a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon">MENU</span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+            {% if is_granted('ROLE_PILOTE') %}
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ path('homePilote')}}"><img src="{{ asset('img/plan.png') }}"  class="navImg"> TACHES PILOTE</a>
+                </li>
+            {% endif %}
+            {% if is_granted('ROLE_ALG') %}
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ path('homeAlg')}}"><img src="{{ asset('img/mission2.png') }}"  class="navImg"> TACHES Responsable magasin</a>
+                </li>
+            {% endif %}
+            {% if is_granted('ROLE_ADMINISTRATIF') %}
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ path('homeAdmin')}}"><img src="{{ asset('img/ce2.png') }}"  class="navImg"> TACHES ADMIN</a>
+                </li>
+            {% endif %}
+            {% if is_granted('ROLE_ADMIN') %}
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ path('suiviTache')}}"><img src="{{ asset('img/ce2.png') }}"  class="navImg"> SUIVI TACHES</a>
+                </li>
+            {% endif %}
+        </ul>
+        <div align="right">
+            {% if is_granted("IS_AUTHENTICATED_REMEMBERED") %}
+                <b style="color: #013976;"> {{ app.user.username }} </b>
+
+                <a class="nav-link" href="{{ path('fos_user_security_logout') }}"><img class="decoImg" src="{{ asset('img/out.png') }}" ></a>
+            {% else %}
+                <a href="{{ path('fos_user_security_login') }}">Connexion au portail</a>
+            {% endif %}
+        </div>
+    </div>
+</nav>
+<div class="container-fluid">

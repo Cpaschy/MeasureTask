@@ -1,0 +1,10 @@
+.btn-danger{
+    background-color: blue !important;
+    border: blue !important;
+}
+.tesimg{
+    position: absolute;
+    top: 1% !important;
+    height: 30px;
+    left: 2%;
+}

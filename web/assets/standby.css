@@ -1,0 +1,96 @@
+#listeTache{
+    position: relative;
+    right: 25%;
+}
+#tachaAutre{
+    position: relative;
+    right: -1%;
+}
+a.nav-link {
+    font-size: 1.2em !important;
+    color: black !important;
+}
+.imgServeur{
+    max-height: 40px;
+}
+.row {
+    margin-right: 15% !important;
+    /*margin-left: -15% !important;*/
+}
+hr{
+    background-color: black !important;
+    text-shadow: white;
+    box-shadow: 0 0 10px 1px black;
+}
+.listdrag{
+    position: relative;
+    right: 25%;
+}
+body{
+    color: #f0f2f5;
+    background-color: #f0f2f5;
+}
+a.nav-link:hover, active{
+    color: #013976 !important;
+    text-decoration: underline #D80D0D;
+    font-weight: bold !important;
+}
+.list-group a:hover, active{
+    color: #013976 !important;
+    text-decoration: underline #D80D0D;
+}
+
+.navImg{
+    max-height: 27px;
+}
+
+#footer{
+    position: relative;
+    bottom: 0;
+}
+
+.navig {
+    border:none;
+    padding:6px 0 6px 0;
+    border-radius:75%;
+    border-bottom:3px solid #013976;
+    font:bold 14px Arial;
+    color:#555;
+    background:#fff;
+    width: 9rem;
+}
+.navig:hover{
+    text-decoration: underline #D80D0D;
+}
+.navig2:hover{
+    text-decoration: underline #D80D0D;
+}
+.navig2{
+    align-content: flex-start!important;
+    border:none;
+    padding:6px 0 6px 0;
+    border-radius:75%;
+    border-bottom:3px solid #013976;
+    font:bold 12px Arial;
+    color:#555;
+    background:#fff;
+    width: 4rem;
+    position: absolute;
+    left: 1%;
+}
+.btn-primary{
+    background-color: #013976 !important;
+}
+.btn-primary:hover, active{
+    background-color: #013976 !important;
+    text-decoration: underline #D80D0D; !important;
+}
+
+ul{
+    list-style: none;
+}
+
+footer {
+  border-top: 1px solid #eee;
+  padding: 1rem 0;
+}

@@ -1,0 +1,41 @@
+{% include '@pages/default/header.html.twig'  %}
+
+<hr>
+<div class="container-fluid">
+    <div align="center">
+        <button class="btn-primary"><h4>Formulaire : Responsable magasin </h4></button>
+    </div>
+    <hr>
+    <div align="center" class="formEdit">
+        <span id="chronotime">0:00:00:00</span>
+        <form name="chronoForm">
+            <input type="button" name="startstop" value="start!" onClick="chronoStart()" />
+            <input type="button" name="reset" value="reset!" onClick="chronoReset()" />
+        </form>
+        {{ form_start(form, { 'attr': { 'class': '' } }) }}
+        <form>
+            <div class="col-sm-6"  id="listeTache">
+                <label><b>Liste tâches</b></label>
+                {{ form_widget(form.tacheAlg) }}
+            </div>
+            <br/>
+            <div class="row" id="tachaAutre">
+                <div class="col-sm-7">
+                    <label><b style="color: red;">ou </b><br/><br/> <b>Tâches autres</b></label>
+                    {{ form_widget(form.tacheAutre) }}
+                </div><b style="color: red;">+</b>
+                <div class="col">
+                    {{ form_widget(form.temps) }}
+                </div>
+                <div class="col" >
+                    {{ form_widget(form.save) }}
+                </div>
+            </div>
+            {{ form_widget(form._token) }}
+        </form>
+
+    </div>
+</div>
+<br/><br/><br/><br/><br/>
+
+{% include '@pages/default/footer.html.twig'  %}

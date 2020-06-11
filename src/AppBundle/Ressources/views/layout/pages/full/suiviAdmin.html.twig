@@ -1,0 +1,49 @@
+{% include '@pages/default/header.html.twig'  %}
+
+<hr>
+<div align="center">
+    <button class="btn-primary"><h4>Suivi des Tâches</h4></button>
+</div>
+<hr>
+<div>
+
+    <div align='center' class="table-responsive">
+        <table class="table col-sm-9">
+            <thead class="thead-dark">
+            <tr>
+                <th scope="col">Utilisateur</th>
+                <th scope="col">Taches Pilotes</th>
+                <th scope="col">Taches ALG</th>
+                <th scope="col">Taches Administratif</th>
+                <th scope="col">Tâches autres</th>
+                <th scope="col">Temps</th>
+            </tr>
+            </thead>
+            {% for tache in taches %}
+                <tbody>
+                <tr>
+                    <td>
+                        {{ tache.user.username }}
+                    </td>
+                    <td>
+                        {{ tache.tachePilote.nom|default('') }}
+                    </td>
+                    <td>
+                        {{ tache.tacheAlg.nom|default('') }}
+                    </td>
+                    <td>
+                        {{ tache.tacheAdmin.nom|default('') }}
+                    </td>
+                    <td>{{ tache.tacheAutre }}</td>
+                    <td>{{ tache.temps|date('H:i:s') }}</td>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+    </div>
+
+</div>
+
+<br/><br/><br/><br/><br/>
+
+{% include '@pages/default/footer.html.twig'  %}
